@@ -5,8 +5,15 @@ import { aboutParagraphs, highlights, stats } from "@/lib/data";
 
 export default function About() {
   return (
-    <section id="about" className="bg-light px-6 py-24 lg:px-8">
-      <div className="mx-auto max-w-6xl">
+    <section
+      id="about"
+      className="relative overflow-hidden bg-gradient-to-b from-light via-white to-light px-6 py-28 lg:px-8"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-rose/20 blur-3xl"
+      />
+      <div className="relative mx-auto max-w-6xl">
         <SectionHeading label="Who I Am" title="About" accent="Me" />
 
         <div className="mt-12 grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
@@ -23,7 +30,7 @@ export default function About() {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-2xl border border-border bg-white p-4 text-center transition-all hover:-translate-y-1 hover:shadow-pink-sm"
+                  className="glass-card glass-card-hover p-4 text-center"
                 >
                   <div className="font-serif text-3xl font-bold text-pink">
                     {stat.value}
@@ -39,7 +46,7 @@ export default function About() {
           <div className="flex flex-col gap-4">
             {highlights.map((highlight, index) => (
               <Reveal key={highlight.title} delay={index * 0.08}>
-                <div className="flex items-start gap-4 rounded-2xl border border-border bg-white p-5 transition-all hover:-translate-y-1 hover:shadow-pink-sm">
+                <div className="glass-card glass-card-hover flex items-start gap-4 p-5">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blush text-deep">
                     <Icon name={highlight.icon} />
                   </div>

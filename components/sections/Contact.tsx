@@ -27,11 +27,15 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-gradient-to-br from-charcoal to-[#2d1a26] px-6 py-24 lg:px-8"
+      className="relative overflow-hidden bg-gradient-to-br from-charcoal to-[#2d1a26] px-6 py-28 lg:px-8"
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-pink/10 blur-3xl"
+        className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-pink/15 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-deep/25 blur-3xl"
       />
       <div className="relative mx-auto max-w-6xl">
         <SectionHeading label="Let's Connect" title="Get In" accent="Touch" dark />
@@ -52,10 +56,10 @@ export default function Contact() {
                   href={link.href}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
-                  className={`inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-[0.92rem] transition-all hover:-translate-y-0.5 ${
+                  className={`inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-[0.92rem] transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.97] ${
                     link.primary
-                      ? "bg-pink font-bold text-white hover:bg-deep"
-                      : "border border-white/20 bg-white/[0.08] font-medium text-white hover:border-pink hover:bg-pink"
+                      ? "bg-gradient-to-r from-pink to-deep font-bold text-white shadow-glow hover:shadow-[0_12px_36px_rgba(232,103,154,0.4)]"
+                      : "border border-white/15 bg-white/[0.07] font-medium text-white backdrop-blur-xl hover:border-pink/60 hover:bg-pink/90"
                   }`}
                 >
                   <LinkIcon size={16} />
@@ -66,7 +70,7 @@ export default function Contact() {
             <a
               href={siteConfig.resume}
               download
-              className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/[0.08] px-6 py-3 text-[0.92rem] font-medium text-white transition-all hover:-translate-y-0.5 hover:border-pink hover:bg-pink"
+              className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.07] px-6 py-3 text-[0.92rem] font-medium text-white backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-pink/60 hover:bg-pink/90 active:scale-[0.97]"
             >
               <Download size={16} />
               Download Resume

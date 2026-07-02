@@ -5,8 +5,15 @@ import { projects } from "@/lib/data";
 
 export default function Projects() {
   return (
-    <section id="projects" className="bg-white px-6 py-24 lg:px-8">
-      <div className="mx-auto max-w-6xl">
+    <section
+      id="projects"
+      className="relative overflow-hidden bg-white px-6 py-28 lg:px-8"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-32 top-1/4 h-96 w-96 rounded-full bg-blush blur-3xl"
+      />
+      <div className="relative mx-auto max-w-6xl">
         <SectionHeading
           label="What I've Built"
           title="Featured"
@@ -16,7 +23,7 @@ export default function Projects() {
         <div className="mt-12 grid gap-7 md:grid-cols-2">
           {projects.map((project, index) => (
             <Reveal key={project.name} delay={index * 0.08}>
-              <article className="flex h-full flex-col rounded-2xl border border-border bg-light p-8 transition-all hover:-translate-y-1.5 hover:shadow-pink-lg">
+              <article className="glass-card glass-card-hover flex h-full flex-col p-8">
                 <div className="mb-5 flex items-start justify-between">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-pink to-deep text-white">
                     <Icon name={project.icon} size={22} />
@@ -46,7 +53,7 @@ export default function Projects() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-md border border-border bg-white px-2.5 py-1 font-mono text-xs text-muted"
+                      className="rounded-lg border border-white/70 bg-white/70 px-2.5 py-1 font-mono text-xs text-muted"
                     >
                       {tech}
                     </span>

@@ -5,8 +5,15 @@ import { experiences } from "@/lib/data";
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-light px-6 py-24 lg:px-8">
-      <div className="mx-auto max-w-6xl">
+    <section
+      id="experience"
+      className="relative overflow-hidden bg-gradient-to-b from-white via-light to-white px-6 py-28 lg:px-8"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-rose/20 blur-3xl"
+      />
+      <div className="relative mx-auto max-w-6xl">
         <SectionHeading
           label="Where I've Worked"
           title="Work"
@@ -16,7 +23,7 @@ export default function Experience() {
         <div className="mt-12 flex flex-col gap-6">
           {experiences.map((experience) => (
             <Reveal key={experience.company}>
-              <article className="relative overflow-hidden rounded-2xl border border-border bg-white p-8 sm:p-10">
+              <article className="glass-card glass-card-hover relative overflow-hidden p-8 sm:p-10">
                 <span
                   aria-hidden
                   className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-pink to-rose"
