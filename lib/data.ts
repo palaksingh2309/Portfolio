@@ -6,7 +6,7 @@ export const siteConfig = {
   email: "palak.singhhh23@gmail.com",
   phone: "+91 70049 93499",
   phoneHref: "tel:+917004993499",
-  resume: "/Resume.pdf",
+  resume: "/images/Resume.pdf",
   photo: "/images/myphoto.png",
   socials: {
     linkedin: "https://www.linkedin.com/in/palak-singh-455191321/",
@@ -77,51 +77,37 @@ export const skillGroups = [
     skills: ["Java", "Python", "JavaScript", "TypeScript", "SQL", "C++"],
   },
   {
-    title: "Backend & APIs",
-    skills: [
-      "Node.js",
-      "Spring Boot",
-      "FastAPI",
-      "REST",
-      "GraphQL",
-      "Microservices",
-      "Kafka",
-    ],
+    title: "Frameworks",
+    skills: ["Next.js", "React.js", "Spring Boot", "FastAPI"],
   },
   {
     title: "Frontend",
+    skills: ["TypeScript", "Tailwind CSS", "Redux", "Zustand", "HTML5", "CSS3"],
+  },
+  {
+    title: "Backend",
     skills: [
-      "React.js",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Redux",
-      "Zustand",
+      "Node.js",
+      "REST APIs",
+      "GraphQL",
+      "Microservices",
+      "Kafka",
+      "Socket.IO",
     ],
   },
   {
-    title: "Databases & Caching",
+    title: "Databases",
     skills: ["PostgreSQL", "MongoDB", "Redis", "Query Optimization"],
   },
   {
-    title: "DevOps & Cloud",
+    title: "Tools",
     skills: [
-      "AWS EC2/S3/EKS",
       "Docker",
       "Kubernetes",
       "Terraform",
-      "CI/CD",
       "Git",
-    ],
-  },
-  {
-    title: "CS Fundamentals",
-    skills: [
-      "Data Structures",
-      "Algorithms",
-      "System Design",
-      "OOP",
-      "Distributed Systems",
+      "CI/CD",
+      "AWS EC2/S3/EKS",
     ],
   },
 ];
@@ -149,6 +135,9 @@ export const projects = [
     name: "EduCore",
     description:
       "A multi-tenant School ERP SaaS platform powering 40+ modules across multiple schools. Handles 4K+ active users, ₹6L+ transactions, and payment processing with 99.9% success rate.",
+    image: "/images/educore_thumbnail.png",
+    githubUrl: "https://github.com/palaksingh2309",
+    demoUrl: "https://github.com/palaksingh2309", // live demo or project link
     stats: [
       { value: "4K+", label: "active users" },
       { value: "₹6L+", label: "transactions" },
@@ -162,11 +151,24 @@ export const projects = [
     name: "SafeSurf",
     description:
       "A real-time mobile content moderation system. Built AI-powered pipelines for instant detection of unsafe media, Android client with Kotlin/Java, and Spring Boot backend with 85%+ test coverage.",
+    image: "/images/safesurf_thumbnail.png",
+    githubUrl: "https://github.com/palaksingh2309",
+    demoUrl: undefined, // no live demo link for mobile app
     stats: [
       { value: "85%+", label: "test coverage" },
       { value: "Real-time", label: "inference" },
     ],
     tech: ["Spring Boot", "TensorFlow", "NLP", "Android", "Java/Kotlin", "JUnit"],
+  },
+];
+
+export const certifications = [
+  {
+    title: "Azure Fundamentals (AZ-900)",
+    issuer: "Microsoft",
+    year: "2024",
+    credentialUrl: "https://learn.microsoft.com/en-us/users/palaksingh-455191321/",
+    icon: "Cloud",
   },
 ];
 

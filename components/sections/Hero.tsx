@@ -90,7 +90,7 @@ export default function Hero() {
             {heroBadges.map((badge) => (
               <span
                 key={badge}
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/70 bg-white/55 px-4 py-1.5 text-[0.82rem] font-semibold text-deep shadow-glass backdrop-blur-xl"
+                className="inline-flex items-center gap-1.5 rounded-full border border-white/70 bg-white/55 px-4 py-1.5 text-[0.82rem] font-semibold text-deep shadow-glass backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:bg-white/75"
               >
                 <BadgeCheck size={14} className="text-pink" />
                 {badge}
@@ -102,24 +102,24 @@ export default function Hero() {
             variants={item}
             className="flex flex-wrap justify-center gap-4 lg:justify-start"
           >
-            <Link
-              href="#projects"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-pink to-deep px-8 py-3.5 text-[0.95rem] font-semibold text-white shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_36px_rgba(194,63,116,0.4)] active:scale-[0.97]"
-            >
-              View My Work
-              <ArrowRight
-                size={16}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </Link>
             <a
               href={siteConfig.resume}
               download
-              className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/55 px-8 py-3.5 text-[0.95rem] font-semibold text-deep shadow-glass backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/80 active:scale-[0.97]"
+              className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-pink to-deep px-8 py-3.5 text-[0.95rem] font-bold text-white shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_36px_rgba(194,63,116,0.4)] active:scale-[0.97]"
             >
-              <Download size={16} />
+              <Download
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-y-0.5"
+              />
               Download Resume
             </a>
+            <Link
+              href="#projects"
+              className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/55 px-8 py-3.5 text-[0.95rem] font-semibold text-deep shadow-glass backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/80 active:scale-[0.97]"
+            >
+              View Projects
+              <ArrowRight size={16} className="text-pink" />
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -163,7 +163,10 @@ export default function Hero() {
         <motion.div
           animate={prefersReducedMotion ? undefined : { y: [0, 8, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/70 bg-white/55 text-pink shadow-glass backdrop-blur-xl"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/70 bg-white/55 text-pink shadow-glass backdrop-blur-xl cursor-pointer hover:bg-white/80 transition-colors"
+          onClick={() => {
+            document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+          }}
         >
           <ChevronDown size={18} />
         </motion.div>

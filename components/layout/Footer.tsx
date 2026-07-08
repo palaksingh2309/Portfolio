@@ -1,15 +1,74 @@
-import { Heart } from "lucide-react";
-import { siteConfig } from "@/lib/data";
+"use client";
+
+import { Heart, Github, Linkedin, Code2 } from "lucide-react";
+import Link from "next/link";
+import { siteConfig, navLinks } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#120d10] px-6 py-7 text-center text-sm text-white/40">
-      <p className="inline-flex flex-wrap items-center justify-center gap-1.5">
-        Designed &amp; crafted with
-        <Heart size={14} className="fill-rose text-rose" aria-label="love" />
-        by <span className="font-medium text-rose">{siteConfig.name}</span>
-        <span aria-hidden>·</span> {new Date().getFullYear()}
-      </p>
+    <footer className="bg-[#120d10] px-6 py-12 text-center text-white/40 border-t border-white/5">
+      <div className="mx-auto max-w-4xl space-y-6">
+        
+        {/* Quick Links */}
+        <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="hover:text-rose transition-colors duration-200"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Social Icons */}
+        <div className="flex justify-center gap-4 text-white/60">
+          <a
+            href={siteConfig.socials.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-rose hover:scale-110 transition-all duration-200"
+            aria-label="GitHub"
+          >
+            <Github size={20} />
+          </a>
+          <a
+            href={siteConfig.socials.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-rose hover:scale-110 transition-all duration-200"
+            aria-label="LinkedIn"
+          >
+            <Linkedin size={20} />
+          </a>
+          <a
+            href={siteConfig.socials.leetcode}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-rose hover:scale-110 transition-all duration-200"
+            aria-label="LeetCode"
+          >
+            <Code2 size={20} />
+          </a>
+        </div>
+
+        {/* Copyright & love statement */}
+        <div className="text-xs space-y-2 border-t border-white/5 pt-6 text-white/30">
+          <p className="inline-flex flex-wrap items-center justify-center gap-1.5">
+            Designed &amp; crafted with
+            <Heart size={12} className="fill-rose text-rose" aria-label="love" />
+            by <span className="font-medium text-rose">{siteConfig.name}</span>
+          </p>
+          <p>© {new Date().getFullYear()} Palak Singh. All rights reserved.</p>
+        </div>
+
+      </div>
     </footer>
   );
 }
