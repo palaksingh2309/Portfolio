@@ -47,7 +47,7 @@ export default function ContactForm() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="glass-card w-full max-w-lg border border-white/20 bg-white/10 p-8 shadow-pink-md backdrop-blur-xl"
+      className="glass-card w-full max-w-lg p-8 shadow-pink-md"
     >
       <h3 className="mb-6 font-serif text-2xl font-bold text-white">
         Send a Message
@@ -64,7 +64,7 @@ export default function ContactForm() {
             name="name"
             value={formState.name}
             onChange={handleChange}
-            placeholder="John Doe"
+            placeholder="your name"
             disabled={status === "submitting"}
             className="w-full rounded-2xl border border-white/10 bg-white/[0.06] px-5 py-3.5 text-sm text-white placeholder-white/40 shadow-inner outline-none transition-all duration-300 focus:border-pink/60 focus:bg-white/[0.1] focus:ring-2 focus:ring-pink/20"
             required
@@ -82,7 +82,7 @@ export default function ContactForm() {
             name="email"
             value={formState.email}
             onChange={handleChange}
-            placeholder="johndoe@example.com"
+            placeholder="youremailid@gmail.com"
             disabled={status === "submitting"}
             className="w-full rounded-2xl border border-white/10 bg-white/[0.06] px-5 py-3.5 text-sm text-white placeholder-white/40 shadow-inner outline-none transition-all duration-300 focus:border-pink/60 focus:bg-white/[0.1] focus:ring-2 focus:ring-pink/20"
             required
@@ -114,7 +114,7 @@ export default function ContactForm() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="flex items-center gap-2 text-sm text-rose-300"
+              className="flex items-center gap-2 text-sm text-[#FCA5A5]"
             >
               <AlertCircle size={16} />
               <span>{errorMessage}</span>
@@ -126,7 +126,7 @@ export default function ContactForm() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="flex items-center gap-2 text-sm text-emerald-300"
+              className="flex items-center gap-2 text-sm text-[#6EE7B7]"
             >
               <CheckCircle2 size={16} />
               <span>Your message has been sent successfully!</span>
@@ -138,7 +138,7 @@ export default function ContactForm() {
           type="submit"
           disabled={status === "submitting"}
           suppressHydrationWarning
-          className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-pink to-deep py-3.5 text-sm font-bold text-white shadow-glow transition-all duration-300 hover:shadow-[0_12px_36px_rgba(232,103,154,0.4)] disabled:opacity-75 active:scale-[0.98]"
+          className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-pink to-deep py-3.5 text-sm font-bold text-white shadow-glow transition-all duration-300 hover:shadow-[0_12px_36px_rgba(99,102,241,0.35)] disabled:opacity-75 active:scale-[0.98]"
         >
           {status === "submitting" ? (
             <>

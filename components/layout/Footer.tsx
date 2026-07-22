@@ -6,7 +6,7 @@ import { siteConfig, navLinks } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#120d10] px-6 py-12 text-center text-white/40 border-t border-white/5">
+    <footer className="bg-[#090605] px-6 py-12 text-center text-white/40 border-t border-white/[0.06]">
       <div className="mx-auto max-w-4xl space-y-6">
         
         {/* Quick Links */}

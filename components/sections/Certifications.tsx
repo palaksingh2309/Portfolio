@@ -8,16 +8,16 @@ export default function Certifications() {
   return (
     <section
       id="certifications"
-      className="relative overflow-hidden bg-white px-6 py-28 lg:px-8"
+      className="relative overflow-hidden bg-light px-6 py-28 lg:px-8"
     >
       {/* Decorative blurs */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-rose/10 blur-3xl"
+        className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-rose/5 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-20 top-1/4 h-72 w-72 rounded-full bg-blush/20 blur-3xl"
+        className="pointer-events-none absolute -left-20 top-1/4 h-72 w-72 rounded-full bg-blush/10 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-6xl">
@@ -30,13 +30,13 @@ export default function Certifications() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {certifications.map((cert, index) => (
             <Reveal key={cert.title} delay={index * 0.08}>
-              <div className="glass-card glow-hover border border-white/80 flex flex-col justify-between h-full p-7 transition-all duration-300 hover:scale-[1.03] hover:border-pink/25 hover:bg-white/80">
+              <div className="glass-card glow-hover flex flex-col justify-between h-full p-7 transition-all duration-300 hover:scale-[1.03] hover:border-pink/20">
                 <div>
-                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-blush text-deep shadow-sm">
-                    <Icon name={cert.icon} className="text-deep" />
+                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-pink/10 text-pink shadow-sm">
+                    <Icon name={cert.icon} className="text-pink" />
                   </div>
                   
-                  <h3 className="font-serif text-lg font-bold text-charcoal leading-snug">
+                  <h3 className="font-serif text-lg font-bold text-white leading-snug">
                     {cert.title}
                   </h3>
                   

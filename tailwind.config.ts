@@ -9,30 +9,30 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        blush: "#FDE8EF",
-        rose: "#F4AECB",
-        pink: "#E8679A",
-        deep: "#C23F74",
-        charcoal: "#1E1B20",
-        muted: "#6B6470",
-        light: "#FAF2F5",
-        border: "#F0D6E4",
+        blush: "#1A130E",
+        rose: "#F5EDE3",
+        pink: "#C5A880",
+        deep: "#8C6D4F",
+        charcoal: "#EBE5DF",
+        muted: "#9C8D82",
+        light: "#0C0807",
+        border: "#251B15",
       },
       fontFamily: {
-        serif: ["var(--font-playfair)", "serif"],
-        sans: ["var(--font-dm-sans)", "sans-serif"],
-        mono: ["var(--font-dm-mono)", "monospace"],
+        serif: ["var(--font-cormorant)", "serif"],
+        sans: ["var(--font-inter)", "sans-serif"],
+        mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       boxShadow: {
-        "pink-sm": "0 8px 28px rgba(232,103,154,0.12)",
-        "pink-md": "0 12px 40px rgba(232,103,154,0.14)",
-        "pink-lg": "0 16px 48px rgba(232,103,154,0.18)",
-        glow: "0 8px 24px rgba(194,63,116,0.28)",
+        "pink-sm": "0 8px 28px rgba(197, 168, 128, 0.06)",
+        "pink-md": "0 12px 40px rgba(197, 168, 128, 0.08)",
+        "pink-lg": "0 16px 48px rgba(197, 168, 128, 0.1)",
+        glow: "0 8px 24px rgba(197, 168, 128, 0.15)",
         glass:
-          "0 1px 1px rgba(255,255,255,0.7) inset, 0 8px 32px rgba(194,63,116,0.10)",
+          "0 1px 1px rgba(255, 255, 255, 0.04) inset, 0 8px 32px rgba(12, 8, 7, 0.4)",
         "glass-lg":
-          "0 1px 1px rgba(255,255,255,0.8) inset, 0 20px 60px rgba(194,63,116,0.16)",
-        island: "0 8px 32px rgba(30,27,32,0.14)",
+          "0 1px 1px rgba(255, 255, 255, 0.06) inset, 0 20px 60px rgba(12, 8, 7, 0.5)",
+        island: "0 8px 32px rgba(0, 0, 0, 0.6)",
       },
       borderRadius: {
         "4xl": "2rem",

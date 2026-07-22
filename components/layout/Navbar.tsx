@@ -49,10 +49,10 @@ export default function Navbar() {
         transition={{ type: "spring", stiffness: 140, damping: 20, delay: 0.2 }}
         className="fixed inset-x-0 top-4 z-50 flex justify-center px-4"
       >
-        <nav className="flex w-full max-w-4xl items-center justify-between gap-4 rounded-full border border-white/60 bg-white/70 py-2 pl-6 pr-2 shadow-island backdrop-blur-2xl backdrop-saturate-150">
+        <nav className="flex w-full max-w-4xl items-center justify-between gap-4 rounded-full border border-white/[0.08] bg-[#120E0C]/70 py-2 pl-6 pr-2 shadow-island backdrop-blur-2xl backdrop-saturate-150">
           <Link
             href="#hero"
-            className="font-serif text-lg font-bold text-deep transition-transform duration-300 hover:scale-[1.02]"
+            className="font-serif text-lg font-bold text-white transition-transform duration-300 hover:scale-[1.02]"
             onClick={(e) => {
               e.preventDefault();
               document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
@@ -60,7 +60,7 @@ export default function Navbar() {
           >
             Palak Singh<span className="text-pink">.</span>
           </Link>
-
+ 
           <ul className="hidden items-center gap-1 md:flex">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -68,8 +68,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`relative rounded-full px-3.5 py-1.5 text-[0.84rem] font-medium transition-colors duration-300 ${
                     activeSection === link.href
-                      ? "text-deep"
-                      : "text-charcoal/80 hover:text-pink"
+                      ? "text-white"
+                      : "text-muted hover:text-white"
                   }`}
                   onClick={(e) => {
                     e.preventDefault();
@@ -79,7 +79,7 @@ export default function Navbar() {
                   {activeSection === link.href && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 rounded-full bg-blush"
+                      className="absolute inset-0 rounded-full bg-white/[0.06] border border-white/[0.04]"
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
@@ -88,7 +88,7 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-
+ 
           <div className="flex items-center gap-2">
             <Link
               href="#contact"
@@ -103,7 +103,7 @@ export default function Navbar() {
             <button
               type="button"
               aria-label="Toggle navigation menu"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-blush text-deep transition-all duration-300 hover:bg-rose/30 md:hidden"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/[0.05] text-white transition-all duration-300 hover:bg-white/[0.1] md:hidden"
               onClick={() => setMenuOpen((open) => !open)}
             >
               {menuOpen ? <X size={18} /> : <Menu size={18} />}
@@ -111,7 +111,7 @@ export default function Navbar() {
           </div>
         </nav>
       </motion.header>
-
+ 
       {/* Mobile sheet with AnimatePresence */}
       <AnimatePresence>
         {menuOpen && (
@@ -120,7 +120,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 26 }}
-            className="fixed inset-x-4 top-20 z-50 rounded-3xl border border-white/60 bg-white/90 p-3 shadow-island backdrop-blur-2xl md:hidden"
+            className="fixed inset-x-4 top-20 z-50 rounded-3xl border border-white/[0.08] bg-[#120E0C]/90 p-3 shadow-island backdrop-blur-2xl md:hidden"
           >
             <ul className="flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -134,8 +134,8 @@ export default function Navbar() {
                     }}
                     className={`block rounded-2xl px-4 py-2.5 text-sm font-medium transition-colors ${
                       activeSection === link.href
-                        ? "bg-blush text-deep"
-                        : "text-charcoal hover:bg-light"
+                        ? "bg-white/[0.06] text-white"
+                        : "text-muted hover:bg-white/[0.04] hover:text-white"
                     }`}
                   >
                     {link.label}

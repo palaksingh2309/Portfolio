@@ -30,16 +30,16 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-gradient-to-br from-charcoal to-[#2d1a26] px-6 py-28 lg:px-8"
+      className="relative overflow-hidden bg-gradient-to-br from-[#070504] to-[#120E0C] px-6 py-28 lg:px-8"
     >
       {/* Decorative blurs */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-pink/15 blur-3xl"
+        className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-pink/5 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-deep/25 blur-3xl"
+        className="pointer-events-none absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-deep/10 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-6xl">
@@ -66,7 +66,7 @@ export default function Contact() {
                     rel={isExternal ? "noopener noreferrer" : undefined}
                     className={`inline-flex items-center gap-3.5 rounded-2xl px-6 py-4 text-[0.95rem] transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] ${
                       link.primary
-                        ? "bg-gradient-to-r from-pink to-deep font-bold text-white shadow-glow hover:shadow-[0_12px_36px_rgba(232,103,154,0.4)]"
+                        ? "bg-gradient-to-r from-pink to-deep font-bold text-white shadow-glow hover:shadow-[0_12px_36px_rgba(99,102,241,0.35)]"
                         : "border border-white/10 bg-white/[0.05] font-medium text-white/90 backdrop-blur-xl hover:border-pink/50 hover:bg-white/[0.1] hover:text-white"
                     }`}
                   >

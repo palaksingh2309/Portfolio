@@ -27,8 +27,8 @@ export const navLinks = [
 export const heroBadges = [
   "Google Summer of Code 2024",
   "5× Hackathon Winner",
-  "LeetCode 1700+ Rating",
-  "Azure Certified",
+  "LeetCode 1500+ Rating",
+  "GCP & Azure Certified",
 ];
 
 export const aboutParagraphs = [
@@ -39,7 +39,7 @@ export const aboutParagraphs = [
 
 export const stats = [
   { value: "20K+", label: "Users Served" },
-  { value: "850+", label: "LeetCode Problems" },
+  { value: "500+", label: "LeetCode Problems" },
   { value: "6", label: "Production Apps" },
   { value: "5×", label: "Hackathon Wins" },
 ];
@@ -74,56 +74,66 @@ export const highlights = [
 export const skillGroups = [
   {
     title: "Languages",
-    skills: ["Java", "Python", "JavaScript", "TypeScript", "SQL", "C++"],
-  },
-  {
-    title: "Frameworks",
-    skills: ["Next.js", "React.js", "Spring Boot", "FastAPI"],
-  },
-  {
-    title: "Frontend",
-    skills: ["TypeScript", "Tailwind CSS", "Redux", "Zustand", "HTML5", "CSS3"],
+    skills: ["Python", "Java", "JavaScript", "TypeScript", "SQL"],
   },
   {
     title: "Backend",
+    skills: ["Django", "FastAPI", "Flask", "Node.js", "REST APIs", "GraphQL"],
+  },
+  {
+    title: "AI & LLMs",
     skills: [
-      "Node.js",
-      "REST APIs",
-      "GraphQL",
-      "Microservices",
-      "Kafka",
-      "Socket.IO",
+      "OpenAI API",
+      "LangChain",
+      "RAG Pipelines",
+      "Vector Databases",
+      "AI Agents",
     ],
   },
   {
     title: "Databases",
-    skills: ["PostgreSQL", "MongoDB", "Redis", "Query Optimization"],
+    skills: ["PostgreSQL", "MongoDB", "Redis"],
   },
   {
-    title: "Tools",
+    title: "Scraping & Data",
+    skills: ["BeautifulSoup", "Scrapy", "Playwright"],
+  },
+  {
+    title: "Cloud & Tools",
     skills: [
+      "AWS",
       "Docker",
       "Kubernetes",
-      "Terraform",
       "Git",
       "CI/CD",
-      "AWS EC2/S3/EKS",
+      "Async Programming",
     ],
   },
 ];
 
 export const experiences = [
   {
-    role: "Software Development Intern",
-    company: "MyTripGoals",
-    period: "Aug 2025 – Present",
+    role: "Full Stack Developer Intern",
+    company: "EaseHawk Technologies",
+    period: "Apr 2026 – Present",
+    location: "Gurugram, UP",
+    bullets: [
+      "Developing MoxSend, an AI-powered cold email outreach platform serving over 5,000 active users using Node.js, TypeScript, and Redis.",
+      "Designed and implemented scalable RESTful APIs, background task queues, and data caching strategies to ensure high platform responsiveness.",
+      "Engineered core modules for multi-tenant campaign management, automated AI-driven responses, email scheduling, and transactional delivery flows.",
+      "Deployed and configured containerized production workloads on AWS, optimizing for high availability, security compliance, and cost efficiency.",
+    ],
+  },
+  {
+    role: "Software Engineer Intern",
+    company: "MyTripGoal",
+    period: "Aug 2025 – March 2026",
     location: "Noida, UP",
     bullets: [
-      "Engineered a scalable travel booking platform using React, Node.js, and PostgreSQL — boosted agent productivity by 40%.",
-      "Built a modular frontend architecture with TypeScript, Tailwind CSS, and reusable component systems to accelerate feature delivery.",
-      "Implemented real-time communication using Socket.IO and Redis pub/sub with horizontal scaling, cutting message latency by 15%.",
-      "Integrated RESTful APIs, caching layers, and backend workflows to support scalable booking and payment processing.",
-      "Contributed to CI/CD pipelines, peer code reviews, and Jest-based automated testing to improve deployment stability.",
+      "Built robust and high-performing Python backend services and travel-booking REST APIs utilizing FastAPI and Node.js.",
+      "Created intelligent automation workflows with LangChain, OpenAI APIs, and vector embeddings to streamline itinerary generation and support queries.",
+      "Optimized Postgres database schemas, implemented Redis caching layers, and engineered asynchronous task queues to scale the system to 10K+ users.",
+      "Secured transaction logic and payment API integrations, ensuring highly reliable booking processing across travel operations.",
     ],
   },
 ];
@@ -132,42 +142,54 @@ export const projects = [
   {
     icon: "School",
     badge: "SaaS · Production",
-    name: "EduCore",
+    name: "EduNage AI",
     description:
-      "A multi-tenant School ERP SaaS platform powering 40+ modules across multiple schools. Handles 4K+ active users, ₹6L+ transactions, and payment processing with 99.9% success rate.",
+      "Built scalable backend services using Node.js, FastAPI, PostgreSQL, and Redis for 4K+ active users. Built secure REST APIs, asynchronous notification workflows, and AI-assisted automation modules for attendance, fee management, and academic operations across multi-tenant school environments.",
     image: "/images/educore_thumbnail.png",
     githubUrl: "https://github.com/palaksingh2309",
     demoUrl: "https://github.com/palaksingh2309", // live demo or project link
     stats: [
       { value: "4K+", label: "active users" },
-      { value: "₹6L+", label: "transactions" },
-      { value: "99.9%", label: "uptime" },
+      { value: "2,500+", label: "transactions" },
+      { value: "45%", label: "API speedup" },
     ],
-    tech: ["Node.js", "TypeScript", "PostgreSQL", "Redis", "Razorpay"],
+    tech: ["Node.js", "FastAPI", "PostgreSQL", "Redis", "Razorpay"],
   },
   {
     icon: "ShieldCheck",
-    badge: "Government · Funded",
-    name: "SafeSurf",
+    badge: "AI · Moderation",
+    name: "SafeSurf AI",
     description:
-      "A real-time mobile content moderation system. Built AI-powered pipelines for instant detection of unsafe media, Android client with Kotlin/Java, and Spring Boot backend with 85%+ test coverage.",
+      "Built real-time AI moderation backend using Python, FastAPI, and NLP models to detect unsafe content. Developed intelligent moderation pipelines processing structured and unstructured multimedia data using OpenCV, vector embeddings, and asynchronous processing for scalable low-latency classification workflows.",
     image: "/images/safesurf_thumbnail.png",
     githubUrl: "https://github.com/palaksingh2309",
     demoUrl: undefined, // no live demo link for mobile app
     stats: [
-      { value: "85%+", label: "test coverage" },
-      { value: "Real-time", label: "inference" },
+      { value: "90%+", label: "accuracy" },
+      { value: "Real-time", label: "moderation" },
     ],
-    tech: ["Spring Boot", "TensorFlow", "NLP", "Android", "Java/Kotlin", "JUnit"],
+    tech: [
+      "Python",
+      "FastAPI",
+      "NLP",
+      "OpenCV",
+      "TensorFlow",
+      "Asynchronous Processing",
+    ],
   },
 ];
 
-export const certifications = [
+export const certifications: {
+  title: string;
+  issuer: string;
+  year: string;
+  credentialUrl?: string;
+  icon: string;
+}[] = [
   {
     title: "Azure Fundamentals (AZ-900)",
     issuer: "Microsoft",
     year: "2024",
-    credentialUrl: "https://learn.microsoft.com/en-us/users/palaksingh-455191321/",
     icon: "Cloud",
   },
 ];
@@ -175,8 +197,9 @@ export const certifications = [
 export const achievements = [
   {
     icon: "Code2",
-    title: "LeetCode — Top 8%",
-    description: "850+ problems solved · Rating 1700+ · 200-day active streak",
+    title: "Competitive Programming",
+    description:
+      "Solved 500+ problems on LeetCode · Rating 1500+ (Top 8%) · 200-day active streak",
   },
   {
     icon: "Trophy",
@@ -191,32 +214,21 @@ export const achievements = [
       "Selected as contributor — Top 2% globally — open-source contributions",
   },
   {
-    icon: "GraduationCap",
-    title: "Cloud Community Leader",
-    description: "Trained 200+ students across 15 AWS/Azure workshops",
-  },
-  {
     icon: "Cloud",
-    title: "Azure Fundamentals (AZ-900)",
+    title: "Cloud & AI Certifications",
     description:
-      "Microsoft certified in cloud fundamentals and Azure services",
+      "Azure Fundamentals · Google Cloud Generative AI · MLOps Certifications",
   },
   {
     icon: "Package",
-    title: "6 Production Apps",
+    title: "Freelance Experience",
     description:
-      "Freelance: SDPL, Plotify, EduCore and more — 20,000+ users served",
+      "Delivered 6 production applications (SDPL, Plotify, EduNage) serving 20,000+ users",
   },
   {
     icon: "FileText",
     title: "Research Publications",
     description:
-      '3 papers published incl. "Leveraging Kubernetes for LLM Deployment" — IJFMR, Jan 2025',
-  },
-  {
-    icon: "GitBranch",
-    title: "Open Source Contributor",
-    description:
-      "Active contributor to multiple open-source repositories via GSoC and independent work",
+      'Published 3 papers including "Leveraging Kubernetes for LLM Deployment" in IJFMR (Jan 2025)',
   },
 ];

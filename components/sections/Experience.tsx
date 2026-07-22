@@ -7,16 +7,16 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative overflow-hidden bg-gradient-to-b from-white via-light to-white px-6 py-28 lg:px-8"
+      className="relative overflow-hidden bg-gradient-to-b from-[#070504] via-light to-[#070504] px-6 py-28 lg:px-8"
     >
       {/* Background blobs */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-rose/20 blur-3xl"
+        className="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-rose/10 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute right-10 top-10 h-72 w-72 rounded-full bg-blush/20 blur-3xl"
+        className="pointer-events-none absolute right-10 top-10 h-72 w-72 rounded-full bg-blush/10 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-6xl">
@@ -26,7 +26,7 @@ export default function Experience() {
           accent="Experience"
         />
 
-        <div className="mt-14 relative border-l-2 border-pink/20 pl-8 ml-4 sm:ml-6 md:pl-10 space-y-12">
+        <div className="mt-14 relative border-l-2 border-white/[0.08] pl-8 ml-4 sm:ml-6 md:pl-10 space-y-12">
           {experiences.map((experience, index) => (
             <Reveal key={experience.company} delay={index * 0.1}>
               <div className="relative">
@@ -35,10 +35,10 @@ export default function Experience() {
                   <Briefcase size={14} />
                 </span>
 
-                <article className="glass-card glow-hover border border-white/80 p-8 sm:p-10 transition-all duration-300 hover:border-pink/25 hover:bg-white/80">
+                <article className="glass-card glow-hover p-8 sm:p-10 transition-all duration-300 hover:border-pink/20">
                   <div className="mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-start">
                     <div>
-                      <h3 className="font-serif text-2xl font-bold text-charcoal">
+                      <h3 className="font-serif text-2xl font-bold text-white">
                         {experience.role}
                       </h3>
                       <p className="mt-1 text-[1.05rem] font-bold text-pink">
@@ -47,11 +47,11 @@ export default function Experience() {
                     </div>
                     
                     <div className="flex flex-wrap gap-3 text-xs md:text-sm font-semibold">
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-blush px-3.5 py-1.5 text-deep">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-pink/10 px-3.5 py-1.5 text-rose">
                         <Calendar size={13} />
                         {experience.period}
                       </span>
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-white border border-white/60 px-3.5 py-1.5 text-muted">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.02] border border-white/[0.06] px-3.5 py-1.5 text-muted">
                         <MapPin size={13} className="text-pink" />
                         {experience.location}
                       </span>

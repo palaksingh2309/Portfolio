@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 ::selection {
-  background: #f4aecb;
-  color: #1e1b20;
+  background: rgba(99, 102, 241, 0.3);
+  color: #ffffff;
 }
 
 html {
@@ -19,20 +19,20 @@ body {
 @layer components {
   /* iOS-style frosted glass card */
   .glass-card {
-    @apply rounded-3xl border border-white/60 bg-white/55 backdrop-blur-2xl backdrop-saturate-150;
+    @apply rounded-3xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-2xl backdrop-saturate-150;
     box-shadow:
-      0 1px 1px rgba(255, 255, 255, 0.7) inset,
-      0 8px 32px rgba(194, 63, 116, 0.08);
+      0 1px 1px rgba(255, 255, 255, 0.05) inset,
+      0 8px 32px rgba(0, 0, 0, 0.5);
   }
   
   .glass-card-hover {
-    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-white/75;
+    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-white/[0.05] hover:border-white/[0.12];
   }
   
   .glass-card-hover:hover {
     box-shadow:
-      0 1px 1px rgba(255, 255, 255, 0.8) inset,
-      0 20px 60px rgba(194, 63, 116, 0.14);
+      0 1px 1px rgba(255, 255, 255, 0.08) inset,
+      0 20px 60px rgba(99, 102, 241, 0.12);
   }
 
   /* Glow effects for cards on hover */
@@ -42,7 +42,7 @@ body {
   
   .glow-hover::after {
     content: "";
-    @apply absolute inset-0 -z-10 bg-gradient-to-br from-pink/5 to-deep/5 opacity-0 transition-opacity duration-300 rounded-3xl;
+    @apply absolute inset-0 -z-10 bg-gradient-to-br from-pink/10 to-deep/10 opacity-0 transition-opacity duration-300 rounded-3xl;
   }
 
   .glow-hover:hover::after {
@@ -51,19 +51,19 @@ body {
 
   /* Frosted glass on dark background */
   .glass-dark {
-    @apply rounded-3xl border border-white/10 bg-white/[0.06] backdrop-blur-2xl backdrop-saturate-150;
+    @apply rounded-3xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-2xl backdrop-saturate-150;
   }
 }
 
 /* Cinematic slow-drifting ambient gradient */
 .ambient-bg {
   background:
-    radial-gradient(ellipse 80% 60% at 15% 20%, rgba(253, 232, 239, 0.9), transparent 60%),
-    radial-gradient(ellipse 70% 55% at 85% 15%, rgba(244, 174, 203, 0.45), transparent 60%),
-    radial-gradient(ellipse 65% 60% at 75% 90%, rgba(232, 103, 154, 0.18), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 20% 85%, rgba(253, 232, 239, 0.8), transparent 60%),
-    #ffffff;
-  background-size: 160% 160%;
+    radial-gradient(ellipse 65% 55% at 15% 20%, rgba(197, 168, 128, 0.08), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 15%, rgba(140, 109, 79, 0.06), transparent 60%),
+    radial-gradient(ellipse 55% 55% at 75% 90%, rgba(212, 184, 149, 0.04), transparent 60%),
+    radial-gradient(ellipse 50% 45% at 20% 85%, rgba(140, 109, 79, 0.04), transparent 60%),
+    #0C0807;
+  background-size: 140% 140%;
   animation: ambientDrift 22s ease-in-out infinite alternate;
 }
 

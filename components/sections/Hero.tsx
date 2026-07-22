@@ -56,7 +56,7 @@ export default function Hero() {
         >
           <motion.p
             variants={item}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/60 px-4 py-1.5 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-pink shadow-glass backdrop-blur-xl"
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-1.5 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-pink shadow-glass backdrop-blur-xl"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-pink opacity-60" />
@@ -64,25 +64,25 @@ export default function Hero() {
             </span>
             {siteConfig.role}
           </motion.p>
-
+ 
           <motion.h1
             variants={item}
-            className="mb-6 font-serif text-5xl font-bold leading-[1.06] tracking-tight text-charcoal sm:text-6xl lg:text-7xl"
+            className="mb-6 font-serif text-5xl font-bold leading-[1.06] tracking-tight text-white sm:text-6xl lg:text-7xl"
           >
             Hi, I&apos;m
             <br />
-            <span className="bg-gradient-to-r from-pink via-deep to-pink bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white via-[#E2E8F0] to-[#94A3B8] bg-clip-text text-transparent">
               {siteConfig.name}
             </span>
           </motion.h1>
-
+ 
           <motion.p
             variants={item}
             className="mx-auto mb-9 max-w-lg text-lg leading-relaxed text-muted lg:mx-0"
           >
             {siteConfig.tagline}
           </motion.p>
-
+ 
           <motion.div
             variants={item}
             className="mb-10 flex flex-wrap justify-center gap-2.5 lg:justify-start"
@@ -90,14 +90,14 @@ export default function Hero() {
             {heroBadges.map((badge) => (
               <span
                 key={badge}
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/70 bg-white/55 px-4 py-1.5 text-[0.82rem] font-semibold text-deep shadow-glass backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:bg-white/75"
+                className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.02] px-4 py-1.5 text-[0.82rem] font-semibold text-white/95 shadow-glass backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:bg-white/[0.06] hover:border-white/[0.15]"
               >
                 <BadgeCheck size={14} className="text-pink" />
                 {badge}
               </span>
             ))}
           </motion.div>
-
+ 
           <motion.div
             variants={item}
             className="flex flex-wrap justify-center gap-4 lg:justify-start"
@@ -105,7 +105,7 @@ export default function Hero() {
             <a
               href={siteConfig.resume}
               download
-              className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-pink to-deep px-8 py-3.5 text-[0.95rem] font-bold text-white shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_36px_rgba(194,63,116,0.4)] active:scale-[0.97]"
+              className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-pink to-deep px-8 py-3.5 text-[0.95rem] font-bold text-white shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_36px_rgba(99,102,241,0.35)] active:scale-[0.97]"
             >
               <Download
                 size={16}
@@ -115,14 +115,14 @@ export default function Hero() {
             </a>
             <Link
               href="#projects"
-              className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/55 px-8 py-3.5 text-[0.95rem] font-semibold text-deep shadow-glass backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/80 active:scale-[0.97]"
+              className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-8 py-3.5 text-[0.95rem] font-semibold text-white shadow-glass backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/[0.08] hover:border-white/[0.15] active:scale-[0.97]"
             >
               View Projects
               <ArrowRight size={16} className="text-pink" />
             </Link>
           </motion.div>
         </motion.div>
-
+ 
         <motion.div
           className="relative h-[340px] w-[300px] shrink-0 sm:h-[400px] sm:w-[340px]"
           initial={
@@ -132,26 +132,22 @@ export default function Hero() {
           transition={{ type: "spring", stiffness: 70, damping: 16, delay: 0.3 }}
           style={prefersReducedMotion ? undefined : { y: photoY }}
         >
-          <div className="absolute inset-0 animate-blob bg-gradient-to-br from-rose to-blush opacity-90" />
-          <div
-            aria-hidden
-            className="absolute inset-6 animate-blob rounded-full bg-white/30 backdrop-blur-sm"
-          />
+          <div className="absolute inset-0 animate-blob bg-gradient-to-br from-pink to-deep opacity-20 blur-xl" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="animate-float">
+            <div className="animate-float glass-card p-3 shadow-pink-md">
               <Image
                 src={siteConfig.photo}
                 alt={siteConfig.name}
                 width={280}
                 height={280}
                 priority
-                className="h-56 w-56 rounded-full border-[5px] border-white/90 object-cover shadow-[0_25px_60px_rgba(194,63,116,0.28)] sm:h-[280px] sm:w-[280px]"
+                className="h-56 w-56 rounded-2xl object-cover sm:h-[280px] sm:w-[280px]"
               />
             </div>
           </div>
         </motion.div>
       </div>
-
+ 
       {/* Scroll cue */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
@@ -163,7 +159,7 @@ export default function Hero() {
         <motion.div
           animate={prefersReducedMotion ? undefined : { y: [0, 8, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/70 bg-white/55 text-pink shadow-glass backdrop-blur-xl cursor-pointer hover:bg-white/80 transition-colors"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.03] text-pink shadow-glass backdrop-blur-xl cursor-pointer hover:bg-white/[0.08] transition-colors"
           onClick={() => {
             document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
           }}

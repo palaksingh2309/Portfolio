@@ -1,22 +1,23 @@
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
 import Icon from "@/components/ui/Icon";
+import Counter from "@/components/ui/Counter";
 import { aboutParagraphs, highlights, stats } from "@/lib/data";
 
 export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-gradient-to-b from-light via-white to-light px-6 py-28 lg:px-8"
+      className="relative overflow-hidden bg-gradient-to-b from-light via-[#050505] to-light px-6 py-28 lg:px-8"
     >
       {/* Decorative gradient blur */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-rose/20 blur-3xl"
+        className="pointer-events-none absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-rose/10 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute right-0 bottom-10 h-80 w-80 rounded-full bg-blush/30 blur-3xl"
+        className="pointer-events-none absolute right-0 bottom-10 h-80 w-80 rounded-full bg-blush/10 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-6xl">
@@ -31,7 +32,7 @@ export default function About() {
                   <p
                     key={paragraph.slice(0, 32)}
                     className={`text-[1.05rem] leading-8 text-muted ${
-                      index === 0 ? "font-medium text-charcoal/90" : ""
+                      index === 0 ? "font-medium text-white/90" : ""
                     }`}
                   >
                     {paragraph}
@@ -43,10 +44,10 @@ export default function About() {
                 {stats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="glass-card glow-hover border border-white/80 p-5 text-center transition-all duration-300 hover:scale-[1.03] hover:border-pink/30 hover:bg-white/95"
+                    className="glass-card glow-hover p-5 text-center transition-all duration-300 hover:scale-[1.03] hover:border-pink/20"
                   >
                     <div className="font-serif text-3xl font-bold bg-gradient-to-r from-pink to-deep bg-clip-text text-transparent">
-                      {stat.value}
+                      <Counter value={stat.value} />
                     </div>
                     <div className="mt-2 text-xs font-semibold uppercase tracking-wider text-muted">
                       {stat.label}
@@ -64,21 +65,21 @@ export default function About() {
               return (
                 <Reveal key={highlight.title} delay={index * 0.08}>
                   <div
-                    className={`glass-card glow-hover flex items-start gap-4 p-5 border transition-all duration-300 hover:scale-[1.02] ${
+                    className={`glass-card glow-hover flex items-start gap-4 p-5 border border-transparent transition-all duration-300 hover:scale-[1.02] ${
                       isEducation
-                        ? "border-pink/30 bg-blush/30 shadow-[0_10px_30px_rgba(232,103,154,0.1)]"
-                        : "border-white/80 hover:border-pink/20 hover:bg-white/80"
+                        ? "border-pink/30 bg-pink/[0.04] shadow-[0_10px_30px_rgba(99,102,241,0.08)]"
+                        : "hover:border-pink/20"
                     }`}
                   >
                     <div
-                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-deep ${
-                        isEducation ? "bg-pink text-white shadow-glow" : "bg-blush"
+                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${
+                        isEducation ? "bg-pink text-white shadow-glow" : "bg-white/[0.04] text-pink"
                       }`}
                     >
-                      <Icon name={highlight.icon} className={isEducation ? "text-white" : "text-deep"} />
+                      <Icon name={highlight.icon} className={isEducation ? "text-white" : "text-pink"} />
                     </div>
                     <div>
-                      <h4 className="text-[0.98rem] font-bold text-charcoal">
+                      <h4 className="text-[0.98rem] font-bold text-white">
                         {highlight.title}
                         {isEducation && (
                           <span className="ml-2 inline-block rounded-full bg-pink/10 px-2 py-0.5 font-mono text-[0.65rem] font-semibold text-pink">
