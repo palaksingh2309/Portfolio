@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 ::selection {
-  background: rgba(99, 102, 241, 0.3);
-  color: #ffffff;
+  background: rgba(185, 28, 28, 0.12);
+  color: #B91C1C;
 }
 
 html {
@@ -14,25 +14,36 @@ html {
 
 body {
   overflow-x: hidden;
+  background-color: #FAF8F5;
+  color: #242120;
+}
+
+/* Notebook ruled grid background */
+.ruled-bg {
+  background-color: #FAF8F5;
+  background-size: 28px 28px;
+  background-image: 
+    linear-gradient(to right, rgba(185, 28, 28, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(185, 28, 28, 0.035) 1px, transparent 1px);
 }
 
 @layer components {
-  /* iOS-style frosted glass card */
+  /* Sketch card layout (paper card look) */
   .glass-card {
-    @apply rounded-3xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-2xl backdrop-saturate-150;
-    box-shadow:
-      0 1px 1px rgba(255, 255, 255, 0.05) inset,
-      0 8px 32px rgba(0, 0, 0, 0.5);
+    @apply rounded-2xl border border-charcoal/10 bg-white/90;
+    box-shadow: 
+      2px 2px 0px rgba(36, 33, 32, 0.05),
+      4px 4px 12px rgba(36, 33, 32, 0.04);
   }
   
   .glass-card-hover {
-    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-white/[0.05] hover:border-white/[0.12];
+    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:border-pink/40 hover:bg-white;
   }
   
   .glass-card-hover:hover {
-    box-shadow:
-      0 1px 1px rgba(255, 255, 255, 0.08) inset,
-      0 20px 60px rgba(99, 102, 241, 0.12);
+    box-shadow: 
+      4px 4px 0px rgba(185, 28, 28, 0.08),
+      8px 8px 24px rgba(36, 33, 32, 0.06);
   }
 
   /* Glow effects for cards on hover */
@@ -42,29 +53,25 @@ body {
   
   .glow-hover::after {
     content: "";
-    @apply absolute inset-0 -z-10 bg-gradient-to-br from-pink/10 to-deep/10 opacity-0 transition-opacity duration-300 rounded-3xl;
+    @apply absolute inset-0 -z-10 bg-gradient-to-br from-pink/5 to-deep/5 opacity-0 transition-opacity duration-300 rounded-2xl;
   }
 
   .glow-hover:hover::after {
     @apply opacity-100;
   }
 
-  /* Frosted glass on dark background */
   .glass-dark {
-    @apply rounded-3xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-2xl backdrop-saturate-150;
+    @apply rounded-2xl border border-charcoal/10 bg-white/95;
   }
 }
 
-/* Cinematic slow-drifting ambient gradient */
+/* Cinematic background (remapped to ruled grid background) */
 .ambient-bg {
-  background:
-    radial-gradient(ellipse 65% 55% at 15% 20%, rgba(197, 168, 128, 0.08), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 85% 15%, rgba(140, 109, 79, 0.06), transparent 60%),
-    radial-gradient(ellipse 55% 55% at 75% 90%, rgba(212, 184, 149, 0.04), transparent 60%),
-    radial-gradient(ellipse 50% 45% at 20% 85%, rgba(140, 109, 79, 0.04), transparent 60%),
-    #0C0807;
-  background-size: 140% 140%;
-  animation: ambientDrift 22s ease-in-out infinite alternate;
+  background-color: #FAF8F5;
+  background-size: 28px 28px;
+  background-image: 
+    linear-gradient(to right, rgba(185, 28, 28, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(185, 28, 28, 0.035) 1px, transparent 1px);
 }
 
 @keyframes ambientDrift {

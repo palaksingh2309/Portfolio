@@ -10,6 +10,7 @@ import {
   Package,
   FileText,
   GitBranch,
+  BookOpen,
   type LucideIcon,
 } from "lucide-react";
 
@@ -25,6 +26,7 @@ const icons: Record<string, LucideIcon> = {
   Package,
   FileText,
   GitBranch,
+  BookOpen,
 };
 
 type IconProps = {

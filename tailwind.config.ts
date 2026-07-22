@@ -9,19 +9,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        blush: "#1A130E",
-        rose: "#F5EDE3",
-        pink: "#C5A880",
-        deep: "#8C6D4F",
-        charcoal: "#EBE5DF",
-        muted: "#9C8D82",
-        light: "#0C0807",
-        border: "#251B15",
+        parchment: "#FAF8F5",
+        "parchment-dark": "#F5EDE3",
+        crimson: "#B91C1C",
+        "crimson-light": "#FEE2E2",
+        charcoal: "#242120",
+        ink: "#5C5755",
+        
+        // Remap existing colors to avoid regressions
+        blush: "#F5EDE3",
+        rose: "#FAF8F5",
+        pink: "#B91C1C",
+        deep: "#991B1B",
+        charcoal_legacy: "#EBE5DF",
+        muted: "#7C726E",
+        light: "#FAF8F5",
+        border: "#E4DCCE",
       },
       fontFamily: {
         serif: ["var(--font-cormorant)", "serif"],
         sans: ["var(--font-inter)", "sans-serif"],
         mono: ["var(--font-jetbrains-mono)", "monospace"],
+        handwritten: ["var(--font-caveat)", "cursive"],
       },
       boxShadow: {
         "pink-sm": "0 8px 28px rgba(197, 168, 128, 0.06)",

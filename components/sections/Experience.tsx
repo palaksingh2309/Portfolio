@@ -7,18 +7,8 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative overflow-hidden bg-gradient-to-b from-[#070504] via-light to-[#070504] px-6 py-28 lg:px-8"
+      className="ruled-bg relative overflow-hidden px-6 py-28 lg:px-8 border-t border-charcoal/10"
     >
-      {/* Background blobs */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-rose/10 blur-3xl"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute right-10 top-10 h-72 w-72 rounded-full bg-blush/10 blur-3xl"
-      />
-
       <div className="relative mx-auto max-w-6xl">
         <SectionHeading
           label="Where I've Worked"
@@ -26,33 +16,33 @@ export default function Experience() {
           accent="Experience"
         />
 
-        <div className="mt-14 relative border-l-2 border-white/[0.08] pl-8 ml-4 sm:ml-6 md:pl-10 space-y-12">
+        <div className="mt-14 relative border-l-2 border-crimson/20 pl-8 ml-4 sm:ml-6 md:pl-10 space-y-12">
           {experiences.map((experience, index) => (
             <Reveal key={experience.company} delay={index * 0.1}>
               <div className="relative">
                 {/* Timeline node icon */}
-                <span className="absolute -left-[45px] sm:-left-[53px] top-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-pink text-white shadow-glow">
+                <span className="absolute -left-[45px] sm:-left-[53px] top-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-crimson text-white shadow-sm border border-white">
                   <Briefcase size={14} />
                 </span>
 
-                <article className="glass-card glow-hover p-8 sm:p-10 transition-all duration-300 hover:border-pink/20">
+                <article className="glass-card p-8 sm:p-10 border border-charcoal/15 bg-white transition-all duration-300 hover:-translate-y-0.5 shadow-sm">
                   <div className="mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-start">
                     <div>
-                      <h3 className="font-serif text-2xl font-bold text-white">
+                      <h3 className="font-serif text-2xl font-bold text-charcoal">
                         {experience.role}
                       </h3>
-                      <p className="mt-1 text-[1.05rem] font-bold text-pink">
+                      <p className="mt-1 text-[1.05rem] font-bold text-crimson">
                         {experience.company}
                       </p>
                     </div>
                     
-                    <div className="flex flex-wrap gap-3 text-xs md:text-sm font-semibold">
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-pink/10 px-3.5 py-1.5 text-rose">
+                    <div className="flex flex-wrap gap-3 text-xs md:text-sm font-bold">
+                      <span className="inline-flex items-center gap-1.5 rounded-md bg-crimson/5 border border-crimson/10 px-3.5 py-1.5 text-crimson">
                         <Calendar size={13} />
                         {experience.period}
                       </span>
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.02] border border-white/[0.06] px-3.5 py-1.5 text-muted">
-                        <MapPin size={13} className="text-pink" />
+                      <span className="inline-flex items-center gap-1.5 rounded-md bg-charcoal/5 border border-charcoal/10 px-3.5 py-1.5 text-ink">
+                        <MapPin size={13} className="text-crimson" />
                         {experience.location}
                       </span>
                     </div>
@@ -62,10 +52,10 @@ export default function Experience() {
                     {experience.bullets.map((bullet, bIndex) => (
                       <li
                         key={bullet.slice(0, 32)}
-                        className="relative pl-6 text-[0.96rem] leading-relaxed text-muted"
+                        className="relative pl-6 text-[0.96rem] leading-relaxed text-ink font-medium"
                       >
                         {/* Custom bullet point */}
-                        <span className="absolute left-0 top-2.5 h-1.5 w-1.5 rounded-full bg-pink" />
+                        <span className="absolute left-0 top-2.5 h-1.5 w-1.5 rounded-full bg-crimson" />
                         {bullet}
                       </li>
                     ))}

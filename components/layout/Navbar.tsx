@@ -38,7 +38,7 @@ export default function Navbar() {
     <>
       {/* Scroll progress bar */}
       <motion.div
-        className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-gradient-to-r from-rose via-pink to-deep"
+        className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-crimson"
         style={{ scaleX: progress }}
       />
 
@@ -49,16 +49,16 @@ export default function Navbar() {
         transition={{ type: "spring", stiffness: 140, damping: 20, delay: 0.2 }}
         className="fixed inset-x-0 top-4 z-50 flex justify-center px-4"
       >
-        <nav className="flex w-full max-w-4xl items-center justify-between gap-4 rounded-full border border-white/[0.08] bg-[#120E0C]/70 py-2 pl-6 pr-2 shadow-island backdrop-blur-2xl backdrop-saturate-150">
+        <nav className="flex w-full max-w-4xl items-center justify-between gap-4 rounded-full border border-charcoal/10 bg-white/90 py-2.5 pl-6 pr-2.5 shadow-sm backdrop-blur-md">
           <Link
             href="#hero"
-            className="font-serif text-lg font-bold text-white transition-transform duration-300 hover:scale-[1.02]"
+            className="font-serif text-lg font-bold text-charcoal transition-transform duration-300 hover:scale-[1.02]"
             onClick={(e) => {
               e.preventDefault();
               document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
             }}
           >
-            Palak Singh<span className="text-pink">.</span>
+            Palak Singh<span className="text-crimson">.</span>
           </Link>
  
           <ul className="hidden items-center gap-1 md:flex">
@@ -66,10 +66,10 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`relative rounded-full px-3.5 py-1.5 text-[0.84rem] font-medium transition-colors duration-300 ${
+                  className={`relative rounded-full px-3.5 py-1.5 text-[0.84rem] font-semibold transition-colors duration-300 ${
                     activeSection === link.href
-                      ? "text-white"
-                      : "text-muted hover:text-white"
+                      ? "text-crimson"
+                      : "text-ink hover:text-crimson"
                   }`}
                   onClick={(e) => {
                     e.preventDefault();
@@ -79,7 +79,7 @@ export default function Navbar() {
                   {activeSection === link.href && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 rounded-full bg-white/[0.06] border border-white/[0.04]"
+                      className="absolute inset-0 rounded-full bg-crimson/5 border border-crimson/10"
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
@@ -92,7 +92,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <Link
               href="#contact"
-              className="hidden items-center gap-1.5 rounded-full bg-pink px-5 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-deep hover:shadow-glow sm:inline-flex"
+              className="hidden items-center gap-1.5 rounded-full bg-crimson px-5 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-crimson/90 sm:inline-flex"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
@@ -103,7 +103,7 @@ export default function Navbar() {
             <button
               type="button"
               aria-label="Toggle navigation menu"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/[0.05] text-white transition-all duration-300 hover:bg-white/[0.1] md:hidden"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-charcoal/5 text-charcoal transition-all duration-300 hover:bg-charcoal/10 md:hidden"
               onClick={() => setMenuOpen((open) => !open)}
             >
               {menuOpen ? <X size={18} /> : <Menu size={18} />}
@@ -120,7 +120,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 26 }}
-            className="fixed inset-x-4 top-20 z-50 rounded-3xl border border-white/[0.08] bg-[#120E0C]/90 p-3 shadow-island backdrop-blur-2xl md:hidden"
+            className="fixed inset-x-4 top-20 z-50 rounded-3xl border border-charcoal/10 bg-white p-3 shadow-lg backdrop-blur-2xl md:hidden"
           >
             <ul className="flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -132,10 +132,10 @@ export default function Navbar() {
                       setMenuOpen(false);
                       document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className={`block rounded-2xl px-4 py-2.5 text-sm font-medium transition-colors ${
+                    className={`block rounded-2xl px-4 py-2.5 text-sm font-semibold transition-colors ${
                       activeSection === link.href
-                        ? "bg-white/[0.06] text-white"
-                        : "text-muted hover:bg-white/[0.04] hover:text-white"
+                        ? "bg-crimson/10 text-crimson"
+                        : "text-ink hover:bg-charcoal/5 hover:text-crimson"
                     }`}
                   >
                     {link.label}
@@ -147,7 +147,7 @@ export default function Navbar() {
                   href={siteConfig.resume}
                   download
                   onClick={() => setMenuOpen(false)}
-                  className="block rounded-2xl bg-gradient-to-r from-pink to-deep px-4 py-2.5 text-center text-sm font-semibold text-white shadow-glow"
+                  className="block rounded-2xl bg-crimson px-4 py-2.5 text-center text-sm font-semibold text-white hover:bg-crimson/90 transition-colors"
                 >
                   Download Resume
                 </a>

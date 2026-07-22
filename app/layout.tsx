@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter, JetBrains_Mono } from "next/font/google";
-import MouseGlow from "@/components/ui/MouseGlow";
+import { Cormorant_Garamond, Inter, JetBrains_Mono, Caveat } from "next/font/google";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -21,6 +20,12 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
 });
 
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-caveat",
+});
+
 export const metadata: Metadata = {
   title: "Palak Singh — Software Engineer & Full-Stack Developer",
   description:
@@ -33,9 +38,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${cormorant.variable} ${inter.variable} ${jetbrainsMono.variable} grain font-sans bg-[#070504] text-charcoal antialiased`}
+        className={`${cormorant.variable} ${inter.variable} ${jetbrainsMono.variable} ${caveat.variable} grain font-sans bg-parchment text-charcoal antialiased`}
       >
-        <MouseGlow />
         {children}
       </body>
     </html>

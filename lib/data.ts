@@ -7,7 +7,7 @@ export const siteConfig = {
   phone: "+91 70049 93499",
   phoneHref: "tel:+917004993499",
   resume: "/images/Resume.pdf",
-  photo: "/images/myphoto.png",
+  photo: "/images/myphoto.jpeg",
   socials: {
     linkedin: "https://www.linkedin.com/in/palak-singh-455191321/",
     github: "https://github.com/palaksingh2309",
@@ -175,6 +175,28 @@ export const projects = [
       "OpenCV",
       "TensorFlow",
       "Asynchronous Processing",
+    ],
+  },
+  {
+    icon: "BookOpen",
+    badge: "Full-Stack · Social",
+    name: "BookVerse",
+    description:
+      "Developed a full-stack reading companion and social platform with user authentication, book reviews, and reading progress tracking. Built community posts with nested comments, real-time notifications, and a comprehensive admin dashboard with role-based access control.",
+    image: "/images/bookverse_thumbnail.png",
+    githubUrl: "https://github.com/palaksingh2309/BookReviewPlatform",
+    demoUrl: "https://bookverse-palak-singhs-projects.vercel.app/",
+    stats: [
+      { value: "Real-time", label: "notifications" },
+      { value: "RBAC", label: "admin controls" },
+      { value: "Nested", label: "comments" },
+    ],
+    tech: [
+      "Next.js",
+      "Supabase",
+      "PostgreSQL",
+      "TypeScript",
+      "Tailwind CSS",
     ],
   },
 ];
